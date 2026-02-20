@@ -1,46 +1,167 @@
-# Getting Started with Create React App
+# Freelance Dashboard
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern, responsive dashboard application for freelancers to manage their projects, track earnings, and handle client relationships. Built with React, TypeScript, and Tailwind CSS.
+
+## Features
+
+- **Dashboard Overview**: Visual statistics with interactive charts showing monthly earnings and project status distribution
+- **Project Management**: Full CRUD (Create, Read, Update, Delete) operations for managing freelance projects
+- **Activity Tracking**: Recent activities feed showing project milestones, payments, and tasks
+- **User Profile**: Editable profile with personal information and password management
+- **Responsive Design**: Fully responsive layout that works on desktop, tablet, and mobile devices
+- **Dark Sidebar**: Professional sidebar navigation with active state indicators
+
+## Tech Stack
+
+- **Frontend Framework**: React 19
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **Routing**: React Router DOM v7
+- **Charts**: Recharts
+- **Icons**: Lucide React
+- **Build Tool**: Create React App (React Scripts)
+- **CSS Preprocessor**: PostCSS with Autoprefixer
+
+## Project Structure
+
+```
+freelance-dashboard/
+├── public/
+│   ├── index.html
+│   ├── favicon.ico
+│   ├── logo192.png
+│   ├── logo512.png
+│   ├── manifest.json
+│   └── robots.txt
+├── src/
+│   ├── components/
+│   │   ├── Layout/
+│   │   │   ├── Header.tsx
+│   │   │   ├── MainLayout.tsx
+│   │   │   └── Sidebar.tsx
+│   │   └── ProjectModal.tsx
+│   ├── context/
+│   │   └── AppContext.tsx
+│   ├── pages/
+│   │   ├── Overview.tsx
+│   │   ├── Profile.tsx
+│   │   └── Projects.tsx
+│   ├── types/
+│   │   └── index.ts
+│   ├── App.tsx
+│   ├── index.css
+│   └── index.tsx
+├── package.json
+├── tailwind.config.js
+├── postcss.config.js
+├── tsconfig.json
+└── README.md
+```
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js (v16 or higher recommended)
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone <repository-url>
+   ```
+
+2. Navigate to the project directory:
+   ```bash
+   cd freelance-dashboard
+   ```
+
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+### Running the Development Server
+
+```bash
+npm start
+```
+
+Opens the app at [http://localhost:3000](http://localhost:3000)
+
+### Building for Production
+
+```bash
+npm run build
+```
+
+Creates an optimized production build in the `build` folder.
 
 ## Available Scripts
 
-In the project directory, you can run:
+| Command | Description |
+|---------|-------------|
+| `npm start` | Runs the app in development mode |
+| `npm test` | Launches the test runner in interactive watch mode |
+| `npm run build` | Builds the app for production |
+| `npm run eject` | Ejects from Create React App configuration |
 
-### `npm start`
+## Data Models
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Project
+- `id`: Unique identifier
+- `name`: Project name
+- `client`: Client name
+- `status`: Project status (In Progress, Completed, On Hold, Pending)
+- `deadline`: Project deadline date
+- `budget`: Project budget in USD
+- `description`: Project description
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### UserProfile
+- `name`: Full name
+- `email`: Email address
+- `role`: Professional role
+- `bio`: User biography
+- `avatar`: Profile picture URL (optional)
 
-### `npm test`
+### DashboardStats
+- `totalProjects`: Total number of projects
+- `totalEarnings`: Sum of completed project budgets
+- `tasksDue`: Number of in-progress projects
+- `completedProjects`: Number of completed projects
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Pages
 
-### `npm run build`
+### 1. Overview (`/`)
+The main dashboard page displaying:
+- Four stat cards: Total Projects, Total Earnings, Tasks Due, Completed
+- Monthly earnings bar chart
+- Project status pie chart
+- Recent activities feed
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 2. Projects (`/projects`)
+Project management page featuring:
+- Desktop table view with all project details
+- Mobile card view for responsive design
+- Create, Edit, View, and Delete actions
+- Status badges with color coding
+- Project modal for form input
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 3. Profile (`/profile`)
+User profile settings including:
+- Avatar display
+- Editable personal information (name, email, role, bio)
+- Password change form
+- Form validation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## License
 
-### `npm run eject`
+This project is private and proprietary.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Author
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+**Hossam Hassan** - Full Stack Developer
+- Email: hossamhassan112003@gmail.com
+- Bio: Passionate developer with 3+ years of experience in web development.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
